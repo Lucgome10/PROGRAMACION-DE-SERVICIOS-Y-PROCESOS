@@ -8,11 +8,13 @@ public class Actividad9 {
 
 	
 	// Crea un programa en java que ejecute el programa de la actividad 8. 
-	// Haciendo uso del método adecuado, recoge el código de salida del programa que se ejecuta.
+	// Haciendo uso del mÃ©todo adecuado, recoge el cÃ³digo de salida del programa que se ejecuta.
 	
 	public static void main(String[] args) throws IOException {
 		
+		// se define la ruta del programa 8
 		File directorio = new File("./bin");
+		
 		ProcessBuilder pb = new ProcessBuilder("java", "ud1.activ8.Actividad8", "3");
 		pb.directory(directorio);
 		
@@ -33,7 +35,7 @@ public class Actividad9 {
 			codigoSalida = p.waitFor();
 			System.out.println(codigoSalida);
 		} catch (Exception e) {
-			System.out.println("Hay una excepción.");
+			System.out.println("Hay una excepciÃ³n.");
 		}
 		
 		
