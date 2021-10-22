@@ -4,19 +4,22 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
+
+// Crea un programa en java que ejecute el desarrollado en la actividad 10 y que informe al usuario del
+// c√≥digo de salida generado.
+
 public class Actividad11 {
 
 	public static void main(String[] args) throws IOException {
 		
-		
-		//File directorio = new File("./bin");
-		ProcessBuilder pb = new ProcessBuilder("java", "actividad10.Actividad10");
-		//pb.directory(directorio);
-		
+		// Generando proceso. El programa se encuentra en el mismo proyecto, en el paquete actividad10
+		ProcessBuilder pb = new ProcessBuilder("java", "actividad10.Actividad10");	
 		Process p = pb.start();
 		
+		//Creando flujo de entrada.
 		InputStream is = p.getInputStream();
 		int c;
+		//Mientras quede algo por leer, lo imprime por pantalla.
 		while ((c = is.read()) != -1) {
 			System.out.print((char) c);
 		}
@@ -27,10 +30,11 @@ public class Actividad11 {
 		int codigoSalida;
 		
 		try {
+			//Recogida de valor de salida de Actividad10
 			codigoSalida = p.waitFor();
-			System.out.println("El cÛdigo de salida es: " + codigoSalida);
+			System.out.println("El c√≥digo de salida es: " + codigoSalida);
 		} catch (Exception e) {
-			System.out.println("Hay una excepciÛn.");
+			System.out.println("Hay una excepci√≥n.");
 		}
 
 	}
