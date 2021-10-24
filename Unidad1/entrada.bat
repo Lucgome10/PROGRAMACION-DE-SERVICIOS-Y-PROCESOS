@@ -1,1 +1,0 @@
-Hola al mundo desde la Actividad 16
